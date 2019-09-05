@@ -15,6 +15,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.rcq.xiaoshuo.R;
 import com.rcq.xiaoshuo.base.adapter.BaseFragmentStateAdapter;
 import com.rcq.xiaoshuo.base.fragment.BaseFragment;
+import com.rcq.xiaoshuo.utils.UIUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,9 @@ public class MallFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         mTabLayout = view.findViewById(R.id.tab_layout);
         mViewPager = view.findViewById(R.id.view_pager);
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mTabLayout.getLayoutParams();
+        params.topMargin = UIUtils.getStatuBarHeight(getContext());
+        mTabLayout.setLayoutParams(params);
         init();
     }
 

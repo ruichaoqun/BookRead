@@ -7,6 +7,7 @@
     tools:context=".view.bookshelf.BookShelfFragment">
 
     <TextView
+        android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:drawableRight="@mipmap/search"

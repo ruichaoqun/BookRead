@@ -41,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                     | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
         } else {
             //让contentView延伸到状态栏并且设置状态栏颜色透明
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -78,15 +76,27 @@ public class MainActivity extends AppCompatActivity {
                 switch (position){
                     case 0:
                         mBottomNavigationView.setSelectedItemId(R.id.navigation_mall);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+                        }
                         break;
                     case 1:
                         mBottomNavigationView.setSelectedItemId(R.id.navigation_bookshelf);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+                        }
                         break;
                     case 2:
                         mBottomNavigationView.setSelectedItemId(R.id.navigation_classify);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+                        }
                         break;
                     case 3:
                         mBottomNavigationView.setSelectedItemId(R.id.navigation_person);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            getWindow().setStatusBarColor(Color.TRANSPARENT);
+                        }
                         break;
                 }
 

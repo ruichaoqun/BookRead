@@ -1,6 +1,7 @@
 package com.rcq.xiaoshuo.view.classify;
 
 
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,10 +18,12 @@ import com.rcq.xiaoshuo.base.fragment.BaseSwipeTableFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.rcq.xiaoshuo.R;
 import com.rcq.xiaoshuo.adapter.BookShelfAdapter;
 import com.rcq.xiaoshuo.base.adapter.BaseSpaceItemDecoration;
+import com.rcq.xiaoshuo.utils.UIUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +51,15 @@ public class ClassifyFragment extends BaseSwipeTableFragment<String> {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        final View view1 = view.findViewById(R.id.text);
+        view1.post(new Runnable() {
+            @Override
+            public void run() {
+                LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) view1.getLayoutParams();
+                params.topMargin = UIUtils.getStatuBarHeight(getContext());
+                view1.setLayoutParams(params);
+            }
+        });
         leftRV = view.findViewById(R.id.left_recycler_view);
 
         bindRefreshLayout(R.id.refresh_layout);

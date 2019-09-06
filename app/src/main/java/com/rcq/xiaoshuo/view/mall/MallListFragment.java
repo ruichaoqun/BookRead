@@ -2,6 +2,7 @@ package com.rcq.xiaoshuo.view.mall;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 
@@ -25,10 +26,12 @@ import com.rcq.xiaoshuo.R;
 import com.rcq.xiaoshuo.adapter.HotAdapter;
 import com.rcq.xiaoshuo.adapter.TuijianAdapter;
 import com.rcq.xiaoshuo.adapter.TuijianAdapter2;
+import com.rcq.xiaoshuo.base.adapter.BaseRecyclerAdapter;
 import com.rcq.xiaoshuo.base.adapter.BaseSpaceItemDecoration;
 import com.rcq.xiaoshuo.base.fragment.BaseFragment;
 import com.rcq.xiaoshuo.base.fragment.BaseSwipeFragment;
 import com.rcq.xiaoshuo.utils.UIUtils;
+import com.rcq.xiaoshuo.view.book.BookDetailctivity;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
 
@@ -38,7 +41,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MallListFragment extends BaseSwipeFragment {
+public class MallListFragment extends BaseSwipeFragment implements BaseRecyclerAdapter.OnItemClickListener {
     private Banner mBanner;
     private RecyclerView tuijian;
     private RecyclerView xixuan;
@@ -92,6 +95,8 @@ public class MallListFragment extends BaseSwipeFragment {
         TuijianAdapter tuijianAdapter = new TuijianAdapter(getContext(),list1);
         TuijianAdapter2 tuijianAdapter2 = new TuijianAdapter2(getContext(),list1);
         tuijian.setAdapter(tuijianAdapter2);
+        tuijianAdapter2.setOnItemClickListener(this);
+        tuijianAdapter.setOnItemClickListener(this);
         bangdan.setAdapter(tuijianAdapter2);
         xixuan.setAdapter(tuijianAdapter);
         HotAdapter  hotAdapter = new HotAdapter(getActivity(),list1);
@@ -101,5 +106,10 @@ public class MallListFragment extends BaseSwipeFragment {
     @Override
     public void onRefresh() {
         stopRefresh();
+    }
+
+    @Override
+    public void onItemClick(RecyclerView.ViewHolder viewHolder, View view, int position) {
+        startActivity(new Intent(getContext(), BookDetailctivity.class));
     }
 }

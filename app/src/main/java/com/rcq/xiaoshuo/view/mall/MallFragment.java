@@ -1,5 +1,6 @@
 package com.rcq.xiaoshuo.view.mall;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -39,9 +40,15 @@ public class MallFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         mTabLayout = view.findViewById(R.id.tab_layout);
         mViewPager = view.findViewById(R.id.view_pager);
-        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mTabLayout.getLayoutParams();
-        params.topMargin = UIUtils.getStatuBarHeight(getContext());
-        mTabLayout.setLayoutParams(params);
+        mTabLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mTabLayout.getLayoutParams();
+                params.topMargin = UIUtils.getStatuBarHeight(getContext());
+                mTabLayout.setLayoutParams(params);
+            }
+        });
+
         init();
     }
 

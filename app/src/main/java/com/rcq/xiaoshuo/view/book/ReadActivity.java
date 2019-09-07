@@ -25,6 +25,7 @@ import com.rcq.xiaoshuo.adapter.ZhangjieAdapter;
 import com.rcq.xiaoshuo.base.adapter.BaseRecyclerAdapter;
 import com.rcq.xiaoshuo.utils.UIUtils;
 import com.rcq.xiaoshuo.widget.popup.LiangDuPopupWindow;
+import com.rcq.xiaoshuo.widget.popup.LookVideoPopupWindow;
 import com.rcq.xiaoshuo.widget.popup.ReadSettingPopupWindow;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -38,6 +39,7 @@ import android.view.Menu;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,8 +59,10 @@ public class ReadActivity extends AppCompatActivity implements View.OnClickListe
     ZhangjieAdapter mAdapter;
     ReadSettingPopupWindow mSettingPopupWindow;
     LiangDuPopupWindow mLiangDuPopupWindow;
+    LookVideoPopupWindow mLookVideoPopupWindow;
 
-
+    View rootView;
+    TextView tvRead,tvTitle,tvPage,tvYeJian;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,8 +92,15 @@ public class ReadActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.yejian).setOnClickListener(this);
         findViewById(R.id.liangdu).setOnClickListener(this);
         findViewById(R.id.shezhi).setOnClickListener(this);
+        findViewById(R.id.next_tv).setOnClickListener(this);
+        tvRead = findViewById(R.id.text);
+        rootView = findViewById(R.id.root_view);
+        tvTitle = findViewById(R.id.title_tv);
+        tvPage = findViewById(R.id.page_tv);
+        tvYeJian = findViewById(R.id.yejian);
     }
 
+    private boolean isNight = false;
 
     @Override
     public void onClick(View v) {
@@ -106,6 +117,26 @@ public class ReadActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.yejian:
                 isSettingHide = true;
                 starAnimation();
+
+                if (!isNight){
+                    isNight = true;
+                    rootView.setBackgroundColor(Color.parseColor("#001525"));
+                    tvRead.setTextColor(Color.parseColor("#2C4E5A"));
+                    tvTitle.setTextColor(Color.parseColor("#2C4E5A"));
+                    tvPage.setTextColor(Color.parseColor("#2C4E5A"));
+
+                    tvYeJian.setText("日间");
+                    tvYeJian.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.rjian, 0, 0);
+                } else {
+                    isNight = false;
+                    rootView.setBackgroundColor(Color.parseColor("#D4BD9D"));
+                    tvRead.setTextColor(Color.parseColor("#333333"));
+                    tvTitle.setTextColor(Color.parseColor("#FFB29367"));
+                    tvPage.setTextColor(Color.parseColor("#FFB29367"));
+
+                    tvYeJian.setText("夜间");
+                    tvYeJian.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.yejian, 0, 0);
+                }
                 break;
             case R.id.liangdu:
                 isSettingHide = true;
@@ -116,6 +147,11 @@ public class ReadActivity extends AppCompatActivity implements View.OnClickListe
                 isSettingHide = true;
                 starAnimation();
                 showSettingPop();
+                break;
+            case R.id.next_tv:
+                isSettingHide = true;
+                starAnimation();
+                showLookVideo();
                 break;
         }
     }
@@ -143,6 +179,19 @@ public class ReadActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void accept(Long aLong) throws Exception {
                         mSettingPopupWindow.showPopup(R.id.drawer_layout);
+                    }
+                });
+    }
+
+    private void showLookVideo(){
+        if (mLookVideoPopupWindow == null)
+            mLookVideoPopupWindow = new LookVideoPopupWindow(this);
+
+        Observable.timer(300, TimeUnit.MILLISECONDS).observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<Long>() {
+                    @Override
+                    public void accept(Long aLong) throws Exception {
+                        mLookVideoPopupWindow.showPopup(R.id.drawer_layout);
                     }
                 });
     }

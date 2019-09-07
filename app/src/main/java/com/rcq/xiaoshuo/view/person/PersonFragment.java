@@ -36,5 +36,22 @@ public class PersonFragment extends BaseFragment {
                 startActivity(new Intent(getActivity(),FeedbackActivity.class));
             }
         });
+        final View unlogin = view.findViewById(R.id.unlogin);
+        final View haslogin = view.findViewById(R.id.haslogin);
+
+        view.findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                unlogin.setVisibility(View.GONE);
+                haslogin.setVisibility(View.VISIBLE);
+            }
+        });
+        view.findViewById(R.id.logout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                unlogin.setVisibility(View.VISIBLE);
+                haslogin.setVisibility(View.GONE);
+            }
+        });
     }
 }

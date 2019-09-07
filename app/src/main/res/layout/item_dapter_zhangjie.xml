@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="50dp"
     android:gravity="center_vertical">
@@ -9,5 +9,10 @@
         android:layout_height="wrap_content"
         android:textSize="14sp"
         android:text="第一章: 偶遇"
-        android:layout_gravity="center_vertical"/>
-</LinearLayout>
+        android:layout_centerVertical="true"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C4AA86"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

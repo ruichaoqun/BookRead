@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/content"
+        android:id="@+id/layout"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="227dp"
+        android:layout_alignParentBottom="true"
+        android:background="#cc000000"
+        android:orientation="vertical"
+        android:paddingLeft="40dp"
+        android:paddingTop="20dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="30dp"
+        android:id="@+id/content"
+        android:translationY="227dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:text="字号"
+                android:textColor="#FF666666"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="83dp"
+                android:layout_height="24dp"
+                android:background="@drawable/shape_bg_grey_stroke"
+                android:gravity="center"
+                android:text="Aa-"
+                android:textColor="#666"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="20"
+                android:textColor="#666"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="83dp"
+                android:layout_height="24dp"
+                android:background="@drawable/shape_bg_grey_stroke"
+                android:gravity="center"
+                android:text="Aa+"
+                android:textColor="#666"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:text="背景"
+                android:textColor="#FF666666"
+                android:textSize="12sp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/circle_white"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/image2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+                <ImageView
+                    android:id="@+id/image2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/circle_color1"
+                    app:layout_constraintLeft_toRightOf="@+id/image1"
+                    app:layout_constraintRight_toLeftOf="@+id/image3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+                <ImageView
+                    android:id="@+id/image3"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/circle_color2"
+                    app:layout_constraintLeft_toRightOf="@+id/image2"
+                    app:layout_constraintRight_toLeftOf="@+id/image4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+                <ImageView
+                    android:id="@+id/image4"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/circle_color3"
+                    app:layout_constraintLeft_toRightOf="@+id/image3"
+                    app:layout_constraintRight_toLeftOf="@+id/image5"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+                <ImageView
+                    android:id="@+id/image5"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/circle_color4"
+                    app:layout_constraintLeft_toRightOf="@+id/image4"
+                    app:layout_constraintRight_toLeftOf="@+id/image6"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+                <ImageView
+                    android:id="@+id/image6"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/circle_color5"
+                    app:layout_constraintLeft_toRightOf="@+id/image5"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:text="间距"
+                android:textColor="#FF666666"
+                android:textSize="12sp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/image7"
+                    android:layout_width="53dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/shape_bg_grey_stroke"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/image8"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    android:src="@mipmap/abc"
+                    android:scaleType="center"/>
+
+                <ImageView
+                    android:id="@+id/image8"
+                    android:layout_width="53dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/shape_bg_grey_stroke"
+                    app:layout_constraintLeft_toRightOf="@+id/image7"
+                    app:layout_constraintRight_toLeftOf="@+id/image9"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    android:src="@mipmap/abc"
+                    android:scaleType="center"/>
+
+                <ImageView
+                    android:id="@+id/image9"
+                    android:layout_width="53dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/shape_bg_grey_stroke"
+                    app:layout_constraintLeft_toRightOf="@+id/image8"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    android:src="@mipmap/abc"
+                    android:scaleType="center"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:text="翻页"
+                android:textColor="#FF666666"
+                android:textSize="12sp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="53dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/shape_bg_grey_stroke"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/text2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    android:text="滑动"
+                    android:gravity="center"
+                    android:textColor="#666"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="53dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/shape_bg_grey_stroke"
+                    app:layout_constraintLeft_toRightOf="@+id/text1"
+                    app:layout_constraintRight_toLeftOf="@+id/text3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    android:text="仿真"
+                    android:gravity="center"
+                    android:textColor="#666"
+                    android:textSize="12sp"/>
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="53dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/shape_bg_grey_stroke"
+                    app:layout_constraintLeft_toRightOf="@+id/text2"
+                    app:layout_constraintRight_toLeftOf="@+id/text4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    android:text="平移"
+                    android:gravity="center"
+                    android:textColor="#666"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/text4"
+                    android:layout_width="53dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/shape_bg_grey_stroke"
+                    app:layout_constraintLeft_toRightOf="@+id/text3"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    android:text="上下"
+                    android:gravity="center"
+                    android:textColor="#666"
+                    android:textSize="12sp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:text="模式"
+                android:textColor="#FF666666"
+                android:textSize="12sp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/text5"
+                    android:layout_width="71dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/shape_bg_grey_stroke"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/text6"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    android:text="横/竖屏"
+                    android:gravity="center"
+                    android:textColor="#666"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/text6"
+                    android:layout_width="71dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/shape_bg_grey_stroke"
+                    app:layout_constraintLeft_toRightOf="@+id/text5"
+                    app:layout_constraintRight_toLeftOf="@+id/text7"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    android:text="自动阅读"
+                    android:gravity="center"
+                    android:textColor="#666"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/text7"
+                    android:layout_width="71dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/shape_bg_grey_stroke"
+                    app:layout_constraintLeft_toRightOf="@+id/text6"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    android:text="全屏翻页"
+                    android:gravity="center"
+                    android:textColor="#666"
+                    android:textSize="12sp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,9 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D4BD9D"
     tools:context=".view.book.ReadActivity">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第一章：偶遇"
+                android:textColor="#FFB29367"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:lineSpacingExtra="5dp"
+                android:text=" 王二柱高高兴兴的去开门，打开门一看 , 竟然是韩秀儿。\n\n
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    这就是嫂子今天请的客人？\n\n
+
+    一想到韩秀儿与刘刚在果园里有说有笑，王二柱就心里堵得慌 , 很气愤。\n\n
+
+    “砰——”\n\n
+
+    他带着情绪的直接把门又关上了！\n\n
+
+    “二柱 , 你咋啦？”韩秀儿看到王二柱开门 , 正带着笑的要与他打招呼 , 却是突然被拒之门外，让她有些意外。\n\n
+
+    从堂屋里赶出来的林芳也皱了一下眉头，不解的看着王二柱：“二柱 , 你怎么把秀儿关在门外了？以前秀儿来的时候，你不都是最欢迎她的吗？”\n\n
+
+    “嫂子，她是坏人，咱们不要让她进来。”王二柱憨憨的说道 , 其实 , 这也是他的心里话。他觉得与刘刚走的近的人都不是好人。\n\n
+
+    “坏人？秀儿怎么成坏人了？她这次来咱家 , 可是来帮咱们的。”林芳一边笑着，一边去开门了。\n\n
+
+    “秀儿 , 刚才你别介意啊 , 二柱又犯傻了，把你关在了门外。”打开门，林芳赶紧跟韩秀儿道歉。\n
+
+ "
+                android:textColor="#333333"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="本章：第8/10页"
+                android:textColor="#FFB29367"
+                android:textSize="14sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="right"/>
+        </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layout_shezhi">
+        <RelativeLayout
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal"
+            android:background="#CC000000"
+            android:translationY="-45dp">
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@mipmap/fanhui"
+                android:scaleType="center"
+                android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="七阅读书"
+                android:textSize="18sp"
+                android:textColor="#666"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_gravity="bottom"
+            android:background="#CC000000"
+            android:id="@+id/bottom_layout"
+            android:translationY="120dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="上一章"
+                    android:textColor="#FF666666"
+                    android:textSize="12sp" />
+                <SeekBar
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:max="100"
+                    android:maxHeight="3dp"
+                    android:minHeight="3dp"
+                    android:duplicateParentState="false"
+                    android:splitTrack="false"
+                    android:thumbOffset="10dp"
+                    android:progressDrawable="@drawable/seekbar_bg"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="下一章"
+                    android:textColor="#FF666666"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/mulu"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="目录"
+                    android:textColor="#FF666666"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:drawableTop="@mipmap/mulu"
+                    android:drawablePadding="5dp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+                <TextView
+                    android:id="@+id/yejian"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="夜间"
+                    android:textColor="#FF666666"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:drawableTop="@mipmap/yejian"
+                    android:drawablePadding="5dp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+                <TextView
+                    android:id="@+id/liangdu"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="亮度"
+                    android:textColor="#FF666666"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:drawableTop="@mipmap/liangdu"
+                    android:drawablePadding="5dp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+                <TextView
+                    android:id="@+id/shezhi"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="设置"
+                    android:textColor="#FF666666"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:drawableTop="@mipmap/shezhi"
+                    android:drawablePadding="5dp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>
